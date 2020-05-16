@@ -145,7 +145,9 @@ export default {
     }
   }
   .about-section {
-    background: url('~@/assets/images/couple-baguio-wacky.jpg');
+    background-image: url('~@/assets/images/couple-baguio-wacky.jpg');
+    background-size: 100%;
+    background-position: center;
     & .position-absolute {
       display: flex;
       justify-content: center;
