@@ -132,7 +132,7 @@ export default {
       flex: 1;
       & .icon {
         font-size: 4em;
-        margin-bottom: 50px;
+        margin-top: 50px;
       }
       & .head-title {
         font-size: 1.1em;
