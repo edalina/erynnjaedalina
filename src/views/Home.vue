@@ -146,7 +146,7 @@ export default {
   }
   .about-section {
     background-image: url('~@/assets/images/couple-baguio-wacky.jpg');
-    background-size: 100%;
+    background-size: auto 100%;
     background-position: center;
     & .position-absolute {
       display: flex;
