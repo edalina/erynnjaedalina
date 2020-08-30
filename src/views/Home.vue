@@ -2,10 +2,11 @@
   .home
     .banner.position-relative
       parallax(:speed-factor="0.3" :sectionHeight='100')
-        img.parallax-image(src='@/assets/images/wallpaper-lake.jpg')
-      .img-holder.position-absolute.black-20-overlay
-        img(src='@/assets/images/self.jpg')
-        .main-title Erynn Jae Dalina
+        img.parallax-image(src='@/assets/images/wallpaper-main.jpg')
+      .main-text-holder.black-20-overlay
+        .main-title
+          div.font-alternate Erynn Jae
+          div Dalina
     .portfolio-section.section
       section.hero(style='flex: 1;')
         .hero-body
@@ -56,19 +57,14 @@
                   | React Native
                 .description
                   | 6 months experience
-    .about-section.section.position-relative
+    .hire-me.section.position-relative
       .black-20-overlay.position-absolute
         section.hero
           .hero-body
             .container
-              //- h1.title About
-              h2.title Simple is better.
-              h3 Father. Husband. Son. Developer.
-    //- .life-events-section.section
-    //-   .life-events-tree.container
-    //-     .point
-    //-       .label 1993
-    //-       .content Sample Content
+              h1.title Have some offer or project?
+              h2.subtitle Send an email to &nbsp;
+                a.links(href='mailto:yjaedalina@gmail.com') yjaedalina@gmail.com
     .footer
       //- .content.has-text-centered
       div Erynn Jae Dalina &copy; 2020
@@ -101,17 +97,39 @@ export default {
     $('.life-events-tree .point .label').click(function () {
       $(this).parent().children('.content').slideToggle()
     })
+    window.onscroll = (e) => {
+      console.log(e)
+    }
   }
 }
 </script>
+<style lang="scss">
+  .Masthead__image.is-parallax>img {
+    object-position: 10% !important;
+  }
+</style>
 
 <style lang="scss" scoped>
   .banner {
-    & .img-holder {
+    & .main-text-holder {
       display: flex;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
+      &::before {
+        content: ' ';
+        position: absolute;
+        left: calc(50% + 1rem);
+        top: 10%;
+        bottom: 10%;
+        width: 10px;
+        background: #07e4b2;
+      }
       & img {
         max-height: 250px;
         height: 80vh;
@@ -119,11 +137,20 @@ export default {
         opacity: 0.9;
       }
       & .main-title {
-        // -webkit-text-stroke-width: 1px;
-        // -webkit-text-stroke-color: #CCC;
+        @media screen and (max-width: 970px) {
+          font-size: 4em;
+        }
+        @media screen and (max-width: 740px) {
+          font-size: 3em;
+        }
+        width: 50%;
+        position: absolute;
+        left: 50%;
         color: #EFEFEF;
-        font-size: 2rem;
-        text-align: center;
+        margin-left: 2.5rem;
+        font-size: 5rem;
+        text-align: left;
+        line-height: 1em;
       }
     }
   }
@@ -154,9 +181,9 @@ export default {
       }
     }
   }
-  .about-section {
+  .hire-me {
     background-color: gray;
-    background-image: url('~@/assets/images/couple-baguio-wacky.jpg');
+    background-image: url('~@/assets/images/blur-bg-code.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -245,5 +272,14 @@ export default {
   }
   .black-20-overlay {
     background: rgba(0, 0, 0, 0.5);
+  }
+  .white-bg {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .font-alternate {
+    color: #07e4b2 !important;
+  }
+  .links {
+    @extend .font-alternate;
   }
 </style>
