@@ -10,7 +10,8 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'Erynn Jae Dalina'
+      title: 'Erynn Jae Dalina',
+      description: 'Portfolio of Erynn Jae Dalina'
     }
   }
 ]
@@ -22,6 +23,13 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title
+  let descriptionMeta = document.querySelector('head meta[name="description"]')
+  if (!descriptionMeta) {
+    descriptionMeta = document.createElement('meta')
+    descriptionMeta.setAttribute('name', 'description')
+    document.head.querySelector('title').after(descriptionMeta)
+  }
+  descriptionMeta.setAttribute('content', to.meta.description)
   next()
 })
 
