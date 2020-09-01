@@ -13,6 +13,7 @@
     "jquery": "^3.5.1",
     "vue": "^2.6.11",
     "vue-gtm": "^2.2.0",
+    "vue-meta": "^2.4.0",
     "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.1.6"
   },

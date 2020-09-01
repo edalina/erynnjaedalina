@@ -10,6 +10,20 @@
     //-       b-navbar-item(href="#") About Me
     router-view
 </template>
+<script>
+export default {
+  metaInfo: {
+    title: 'Erynn Jae Dalina',
+    meta: [
+      { name: 'description', content: 'Erynn Jae Dalina personal portfolio' },
+      { name: 'og:title', content: 'Erynn Jae Dalina' },
+      { name: 'og:description', content: 'Erynn Jae Dalina personal portfolio' },
+      { name: 'twitter:title', content: 'Erynn Jae Dalina' },
+      { name: 'twitter:description', content: 'Erynn Jae Dalina personal portfolio' }
+    ]
+  }
+}
+</script>
 
 <style lang="scss">
 @import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
