@@ -1,13 +1,5 @@
 <template lang="pug">
   #app
-    //- #nav
-    //-   b-navbar(:transparent='true')
-    //-     template(slot='brand')
-    //-       b-navbar-item(tag='router-link' :to='{ path: "/" }')
-    //-         img(src="@/assets/images/self.jpg")
-    //-     template(slot='start')
-    //-       b-navbar-item(href="#") Home
-    //-       b-navbar-item(href="#") About Me
     router-view
 </template>
 <script>

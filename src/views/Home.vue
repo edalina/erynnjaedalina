@@ -2,7 +2,7 @@
   .home
     .banner.position-relative
       parallax(:speed-factor="0.3" :sectionHeight='100')
-        img.parallax-image(src='@/assets/images/wallpaper-main.jpg')
+        img.parallax-image(src='@/assets/images/wallpaper-main-progressive.jpg')
       .main-text-holder.black-20-overlay
         .main-title
           div.font-alternate Erynn Jae
@@ -12,7 +12,16 @@
         .hero-body
           .container(style='height: 100%; display: flex; flex-direction: column;')
             h1.title Portfolio
-            h2.subtitle A full-stack developer with 8 years of experience.
+            br
+            h2.subtitle
+              | A&nbsp;
+              span.font-alternate full-stack developer&nbsp;
+              | with 8 years of experience.
+              br
+              span.font-alternate Agile&nbsp;
+              | and can easily&nbsp;
+              span.font-alternate adapt&nbsp;
+              | to any languages and technologies.
             .columns.portfolio-wrapper
               .column.is-one-third.portfolio
                 .icon
@@ -32,7 +41,7 @@
                 .icon
                   i.fas.fa-code
                 .head-title
-                  | HTML &amp; CSS
+                  | HTML, CSS, &amp; JavaScript
                 .description
                   | 7+ years experience
             .columns.portfolio-wrapper
@@ -97,20 +106,37 @@ export default {
     $('.life-events-tree .point .label').click(function () {
       $(this).parent().children('.content').slideToggle()
     })
-    window.onscroll = (e) => {
-      console.log(e)
-    }
+
+    // const mainTitle = document.querySelector('.main-title')
+    // let defaultValue = 0
+    // const finalValue = 50
+
+    // const animateTitle = () => {
+    //   setTimeout(() => {
+    //     defaultValue += 1
+    //     mainTitle.style.width = defaultValue + '%'
+    //     if (defaultValue < finalValue) {
+    //       animateTitle()
+    //     }
+    //   }, 500 / 50)
+    // }
+    // animateTitle()
   }
 }
 </script>
 <style lang="scss">
   .Masthead__image.is-parallax>img {
-    object-position: 10% !important;
+    object-position: 10% 50% !important;
   }
 </style>
 
 <style lang="scss" scoped>
+  .font-alternate {
+    color: #07e4b2 !important;
+  }
   .banner {
+    height: 85vh;
+    overflow: hidden;
     & .main-text-holder {
       display: flex;
       position: absolute;
@@ -122,6 +148,12 @@ export default {
       align-items: flex-start;
       flex-direction: column;
       &::before {
+        @media screen and (max-width: 970px) {
+          left: calc(35% + 1rem);
+        }
+        @media screen and (max-width: 740px) {
+          left: calc(25% + 1rem);
+        }
         content: ' ';
         position: absolute;
         left: calc(50% + 1rem);
@@ -139,11 +171,16 @@ export default {
       & .main-title {
         @media screen and (max-width: 970px) {
           font-size: 4em;
+          left: 35%;
+          width: 100%;
         }
         @media screen and (max-width: 740px) {
           font-size: 3em;
+          left: 25%;
+          width: 100%;
         }
         width: 50%;
+        overflow: hidden;
         position: absolute;
         left: 50%;
         color: #EFEFEF;
@@ -151,6 +188,7 @@ export default {
         font-size: 5rem;
         text-align: left;
         line-height: 1em;
+        white-space: nowrap;
       }
     }
   }
@@ -175,9 +213,9 @@ export default {
         font-size: 1.1em;
         font-weight: bold;
         margin-bottom: 10px;
+        margin-top: 20px;
       }
       & .description {
-
       }
     }
   }
@@ -194,7 +232,7 @@ export default {
       flex-direction: column;
     }
     & * {
-      color: #EFEFEF !important;
+      color: #EFEFEF;
     }
   }
   .life-events-section {
@@ -275,9 +313,6 @@ export default {
   }
   .white-bg {
     background: rgba(255, 255, 255, 0.5);
-  }
-  .font-alternate {
-    color: #07e4b2 !important;
   }
   .links {
     @extend .font-alternate;
