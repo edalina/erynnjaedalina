@@ -11,7 +11,7 @@
       section.hero(style='flex: 1;')
         .hero-body
           .container(style='height: 100%; display: flex; flex-direction: column;')
-            h1.title Portfolio
+            h1.title.portfolio-title Portfolio
             br
             h2.subtitle
               | A&nbsp;
@@ -201,6 +201,19 @@ export default {
     justify-content: center;
     &:nth-child(odd) {
       background-color: #EEE;
+    }
+  }
+  .portfolio-section {
+    & .hero {
+      & .hero-body {
+        padding: 0;
+        & .portfolio-title {
+          height: 15vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
   }
   .portfolio-wrapper {
